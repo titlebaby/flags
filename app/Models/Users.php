@@ -14,4 +14,7 @@ class Users extends Model
     public static function getK(){
        return Articles::query();
     }
+    public static function getK1($user_number){
+        return self::where(['user_number'=>$user_number])->first();
+    }
 }

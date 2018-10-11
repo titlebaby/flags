@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
+    dd(123);
     return $request->user();
 });
 
@@ -24,3 +25,9 @@ Route::group(['middleware' => ['api'], 'namespace' => 'Channels'], function () {
 Route::group(['middleware' => ['api']], function () {
     Route::get('test', 'TestController@test');
 });
+
+Route::get('import', 'ExcelController@import');
+
+Route::get('test1', 'ExcelController@test');
+
+Route::get('test_1', 'TestController@test_1');
